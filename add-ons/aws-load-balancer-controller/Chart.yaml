@@ -1,0 +1,10 @@
+apiVersion: v2
+name: aws-load-balancer-controller
+description: Helm cahrt for installing the AWS Load Balancer Conroller
+type: application
+version: 0.0.1
+appVersion: "1.0.0"
+dependencies:
+  - name: aws-load-balancer-controller
+    version: 1.5.3
+    repository: https://aws.github.io/eks-charts

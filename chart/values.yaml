@@ -1,0 +1,53 @@
+# Global Values
+repoUrl: 'https://github.com/malikdraz/argocd-gitops-charts.git'
+targetRevision: HEAD
+region: ''
+account: ''
+clusterName: ''
+destinationServer: ''
+argoNamespace: ''
+argoProject: ''
+
+# AWS Load Balancer Controller Values
+awsLoadBalancerController:
+  enable: false
+  createNamespace: true
+  serviceAccountName:
+  podDisruptionBudget:
+    maxUnavailable: 1
+  respectIgnoreDifferences: true
+  ignoreDifferencies:
+    - group: ""
+      kind: "Secret"
+      jsonPointers:
+        - /data
+    - group: "admissionregistration.k8s.io"
+      kind: "MutatingWebhookConfiguration"
+      jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
+    - group: "admissionregistration.k8s.io"
+      kind: "ValidatingWebhookConfiguration"
+      jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
+
+# AWS for FluentBit
+awsForFluentBit:
+  enable: false
+  createNamespace: true
+  logGroupName:
+  serviceAccountName:
+  kinesis:
+    enabled: false
+  firehose:
+    enabled: false
+  elasticsearch:
+    enabled: false
+
+# AWS EFS CSI Driver
+awsEfsCsiDriver:
+  enable: false
+  serviceAccountName:
+
+# Metrics Server for Kubernetes Cluster
+metricsServer:
+  enable: false

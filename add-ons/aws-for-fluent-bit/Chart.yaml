@@ -1,0 +1,10 @@
+apiVersion: v2
+name: aws-for-fluent-bit
+description: Helm chart for installing AWS for FluentBit
+type: application
+version: 0.0.1
+appVersion: "1.0.0"
+dependencies:
+  - name: aws-for-fluent-bit
+    version: 0.1.24
+    repository: https://aws.github.io/eks-charts

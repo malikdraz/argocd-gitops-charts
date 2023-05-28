@@ -1,1 +1,1 @@
-# argocd-gitops-charts
+# ArgoCD GitOps Chart for Kubernetes Add-ons
