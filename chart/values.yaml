@@ -42,3 +42,10 @@ karpenter:
   controllerClusterEndpoint:
   awsDefaultInstanceProfile:
   interruptionQueueName:
+
+# AWS FluentBit for Logging with CloudWatch
+awsForFluentBit:
+  enable: false
+  createNamespace: true
+  logGroupName:
+  serviceAccountName:
