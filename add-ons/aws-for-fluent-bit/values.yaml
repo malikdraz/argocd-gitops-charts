@@ -1,6 +1,8 @@
 aws-for-fluent-bit:
   serviceAccount:
     create: false
+  nodeSelector:
+    kubernetes.io/os: linux
   cloudWatch:
   firehose:
   kinesis:
