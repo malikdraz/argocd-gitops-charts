@@ -2,7 +2,7 @@ karpenter:
   serviceAccount:
     create: false
   nodeSelector:
-    karpenter.io/os: linux
+    kubernetes.io/os: linux
   settings:
     aws:
       clusterName:
