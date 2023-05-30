@@ -33,3 +33,12 @@ awsLoadBalancerController:
 # Metrics Server for Kubernetes Cluster
 metricsServer:
   enable: false
+
+# Karpenter for Amazon EKS cluster
+karpenter:
+  enable: false
+  createNamespace: true
+  serviceAccountName:
+  controllerClusterEndpoint:
+  awsDefaultInstanceProfile:
+  interruptionQueueName:

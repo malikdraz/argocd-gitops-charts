@@ -1,0 +1,10 @@
+apiVersion: v2
+name: karpenter
+description: Helm chart for installing Karpenter on Amazon EKS cluster
+type: application
+version: 0.0.1
+appVersion: 1.0.0
+dependencies:
+  - name: karpenter
+    version: 0.28.0-rc.1
+    repository: oci://public.ecr.aws/karpenter/karpenter
