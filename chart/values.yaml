@@ -49,3 +49,9 @@ awsForFluentBit:
   createNamespace: true
   logGroupName:
   serviceAccountName:
+  kinesis:
+    enable: false
+  firehose:
+    enable: false
+  elasticsearch:
+    enable: false
