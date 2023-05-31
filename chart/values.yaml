@@ -55,3 +55,9 @@ awsForFluentBit:
     enable: false
   elasticsearch:
     enable: false
+
+# Keda for scaling activity
+keda:
+  enable: false
+  createNamespace: true
+  serviceAccountName:
