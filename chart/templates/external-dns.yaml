@@ -1,8 +1,8 @@
-{{- if and (.Values.keda) (.Values.keda.enable) -}}
+{{- if and (.Values.externalDns) (.Values.externalDns.enable) -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: keda
+  name: external-dns
   namespace: {{ .Values.argoNamespace | default "argocd" }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,23 +11,27 @@ spec:
   source:
     repoURL: {{ .Values.repoUrl }}
     targetRevision: {{ .Values.targetRevision }}
-    path: add-ons/keda
+    path: add-ons/external-dns
     helm:
       values: |
-        keda:
-        {{- toYaml .Values.keda | nindent 10 }}
+        external-dns:
+        {{- toYaml .Values.externalDns | nindent 10 }}
       parameters:
-        - name: keda.serviceAccount.name
-          value: {{ .Values.keda.serviceAccountName }}
+        - name: external-dns.aws.region
+          value: {{ .Values.region }}
+        - name: external-dns.serviceAccount.name
+          value: {{ .Values.externalDns.serviceAccountName}}
+        - name: external-dns.zoneIdFilters[0]
+          value: {{ .Values.externalDns.zoneIdFilter }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
-    namespace: keda
+    namespace: external-dns
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace={{ .Values.keda.createNamespace }}
+      - CreateNamespace={{ .Values.externalDns.createNamespace }}
     retry:
       limit: 1
       backoff:

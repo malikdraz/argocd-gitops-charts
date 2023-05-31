@@ -61,3 +61,10 @@ keda:
   enable: false
   createNamespace: true
   serviceAccountName:
+
+# External DNS operator for managing AWS provider DNS records
+externalDns:
+  enable: false
+  createNamespace: true
+  serviceAccountName:
+  zoneIdFilter:
