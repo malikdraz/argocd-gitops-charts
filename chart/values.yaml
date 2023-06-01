@@ -73,3 +73,11 @@ externalDns:
 externalSecrets:
   enable: false
   createNamespace: true
+
+# Prometheus configuration with integration to AWS managed prometheus service
+prometheus:
+  enable: false
+  createNamespace: true
+  serviceAccountName:
+  roleArn:
+  ampWorkspaceUrl:

@@ -1,0 +1,8 @@
+server:
+  retention: 1h
+  resources:
+    requests:
+      cpu: 1024m
+      memory: 2048Mi
+  global:
+    scrape_interval: 15
