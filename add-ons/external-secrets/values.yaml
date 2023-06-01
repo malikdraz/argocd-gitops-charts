@@ -1,2 +1,1 @@
-serviceAccount:
-  create: false
+# External secrets
