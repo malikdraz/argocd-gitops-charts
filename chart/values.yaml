@@ -81,3 +81,8 @@ prometheus:
   serviceAccountName:
   roleArn:
   ampWorkspaceUrl:
+
+# AWS EFS CSI driver for Volume that needs regional support - compatability with Amazon EFS filesystem
+awsEfsCsiDriver:
+  enable: false
+  serviceAccountName:
