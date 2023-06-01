@@ -68,3 +68,8 @@ externalDns:
   createNamespace: true
   serviceAccountName:
   zoneIdFilter:
+
+# External Secrets Operator for managing external secrets
+externalSecrets:
+  enable: false
+  createNamespace: true
