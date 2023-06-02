@@ -1,4 +1,8 @@
 server:
+  service:
+    statefulSetReplica:
+      enabled: true
+      replica: 3
   replicaCount: 3
   statefulSet:
     enabled: true
