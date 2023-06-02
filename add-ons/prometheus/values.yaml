@@ -1,5 +1,7 @@
 server:
-  retention: 1h
+  statefulSet:
+    enabled: true
+  retention: "7d"
   resources:
     requests:
       cpu: 1024m
