@@ -1,4 +1,5 @@
 server:
+  replicaCount: 3
   statefulSet:
     enabled: true
   retention: "7d"
