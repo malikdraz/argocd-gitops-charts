@@ -21,8 +21,7 @@ cost-analyzer:
         repository: public.ecr.aws/kubecost/prometheus
         tag: v2.35.0
     nodeExporter:
-      tolerations:
-        - operator: 'Exists'
+      enabled: false
 
     configmapReload:
       prometheus:
