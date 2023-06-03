@@ -86,3 +86,7 @@ prometheus:
 awsEfsCsiDriver:
   enable: false
   serviceAccountName:
+
+# ArgoWorkflows
+argoWorkflows:
+  enable: false
