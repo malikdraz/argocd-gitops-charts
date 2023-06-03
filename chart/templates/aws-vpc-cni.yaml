@@ -1,0 +1,35 @@
+{{- if and (.Values.awsVpcCni) (.Values.awsVpcCni.enable) -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-vpc-cni
+  namespace: {{ .Values.argoNamespace | default "argocd" }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ .Values.argoProject | default "default" }}
+  source:
+    repoURL: {{ .Values.repoUrl }}
+    path: add-ons/aws-vpc-cni
+    targetRevision: {{ .Values.targetRevision }}
+    helm:
+      values: |
+        aws-vpc-cni:
+        {{- toYaml .Values.awsVpcCni | nindent 10 }}
+      parameters:
+        - name: aws-vpc-cni.serviceAccount.name
+          value: {{ .Values.awsVpcCni.serviceAccountName }}
+  destination:
+    server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      limit: 1
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 1m
+{{- end -}}

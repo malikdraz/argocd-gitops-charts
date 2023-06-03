@@ -7,5 +7,10 @@ Followings are the chart list:
 - AWS EFS CSI Driver
 - AWS for FluentBit
 - Metrics Server
+- AWS External DNS Operator
+- External Secrets Operator
+- Karpenter
+- Keda
+- AWS Managed Prometheus Workspace Integration
 
 More coming soon!

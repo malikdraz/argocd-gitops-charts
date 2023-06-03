@@ -86,3 +86,7 @@ prometheus:
 awsEfsCsiDriver:
   enable: false
   serviceAccountName:
+
+awsVpcCni:
+  enable: false
+  serviceAccountName:
