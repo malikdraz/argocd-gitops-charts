@@ -90,3 +90,7 @@ awsEfsCsiDriver:
 # ArgoWorkflows
 argoWorkflows:
   enable: false
+
+# Kubecost
+kubecost:
+  enable: false
