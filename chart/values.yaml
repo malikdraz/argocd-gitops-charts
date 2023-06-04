@@ -63,6 +63,7 @@ externalDns:
 externalSecrets:
   enable: false
   createNamespace: true
+  serviceAccountName: 
 
 # Prometheus configuration with integration to AWS managed prometheus service
 prometheus:
