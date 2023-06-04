@@ -1,3 +1,13 @@
+# Global Values
+repoUrl: 'https://github.com/aws-samples/eks-blueprints-add-ons.git'
+targetRevision: HEAD
+region: ''
+account: ''
+clusterName: ''
+destinationServer: ''
+argoNamespace: ''
+argoProject: ''
+
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:
   enable: false
