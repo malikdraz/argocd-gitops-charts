@@ -1,13 +1,3 @@
-# Global Values
-repoUrl: 'https://github.com/malikdraz/argocd-gitops-charts.git'
-targetRevision: HEAD
-region: ''
-account: ''
-clusterName: ''
-destinationServer: ''
-argoNamespace: ''
-argoProject: ''
-
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:
   enable: false
