@@ -30,6 +30,12 @@ spec:
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: karpenter
+  ignoreDifferences:
+  - group: ""
+    kind: Secret
+    jsonPointers:
+    - /data
+    - /stringData
   syncPolicy:
     automated:
       prune: true
