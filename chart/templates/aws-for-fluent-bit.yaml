@@ -19,6 +19,8 @@ spec:
       parameters:
         - name: aws-for-fluent-bit.cloudWatch.region
           value: {{ .Values.region }}
+        - name: aws-for-fluent-bit.cloudWatchLogs.region
+          value: {{ .Values.region }}
         - name: aws-for-fluent-bit.serviceAccount.name
           value: {{ .Values.awsForFluentBit.serviceAccountName }}
         - name: aws-for-fluent-bit.cloudWatch.serviceAccount.name
